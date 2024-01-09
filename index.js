@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import 'dotenv/config';
+import TaskRouter from './router/TaskRouter.js';
 
 const PORT = process.env.PORT;
 const DB_URL = process.env.DB_URL;
@@ -16,6 +17,8 @@ app.use(
     optionSuccessStatus: 200,
   })
 );
+
+app.use('/tasks', TaskRouter);
 
 const startApp = async () => {
     try {
