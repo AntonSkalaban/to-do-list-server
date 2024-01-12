@@ -19,7 +19,7 @@ class TaskService {
 
     async update(task) {
         if (!task._id) throw new Error('Id не найден')
-        const updateTask = await Task.findByIdAndUpdate(card._id, card, {new: true})
+        const updateTask = await Task.findByIdAndUpdate(task._id, task, {new: true})
         return updateTask
     }
 
